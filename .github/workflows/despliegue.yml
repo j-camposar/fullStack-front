@@ -6,7 +6,7 @@ on:
 
 env:
   DOCKERHUB_USERNAME: jocamposar #usuario DockerHub
-  DOCKERHUB_REPO:   fullStack2-back     #repo DockerHub
+  DOCKERHUB_REPO:   fullStack2Back     #repo DockerHub
 
 jobs:
   build:
