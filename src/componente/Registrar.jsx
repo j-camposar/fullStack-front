@@ -33,7 +33,7 @@ export default function Registrar({ obtenerUsuarios }) {
             console.log("🔒 Contraseña encriptada:", encrypted);
 
             // 📡 Envía solicitud al endpoint protegido de registro
-            const res = await fetch("http://localhost:3001/register", {
+            const res = await fetch("http://back:3001/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

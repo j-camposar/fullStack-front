@@ -25,7 +25,7 @@ export default function ActualizarContrasena({ setSelectedUser, u, setMensaje })
             const passwordEncrypt = encryptPassword(form.password);
             const newPasswordEncrypt = encryptPassword(form.newPassword);
 
-            const res = await fetch("http://localhost:3001/actualizaContrasena", {
+            const res = await fetch("http://back:3001/actualizaContrasena", {
                 method: "PUT",
                 headers: { 
                     "Content-Type": "application/json",
