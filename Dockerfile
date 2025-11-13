@@ -1,21 +1,26 @@
 # Etapa 1: Build de React
 FROM node:20-alpine AS build
-
+# Crea el directorio de trabajo dentro del contenedor
 WORKDIR /app
+
+# Copiar package.json y package-lock.json
 COPY package*.json ./
+
+# Instalar dependencias
 RUN npm install
+
+# Copiar todo, incluyendo .env
 COPY . .
+
+# Ejecutar build de React (React tomará las variables del .env)
 RUN npm run build
 
-# Etapa 2: Servidor Nginx para producción
+# Etapa 2: Servidor Nginx
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
-# Copia el build compilado desde la etapa anterior
+# Copiar build
 COPY --from=build /app/build .
 
-# Exponer el puerto 80
 EXPOSE 80
-
-# Comando por defecto de Nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -33,7 +33,7 @@ export default function Registrar({ obtenerUsuarios }) {
             console.log("🔒 Contraseña encriptada:", encrypted);
 
             // 📡 Envía solicitud al endpoint protegido de registro
-            const res = await fetch("https://yn8csy-3001.csb.app/register", {
+            const res = await fetch("https://fullstack-back-lg09.onrender.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
