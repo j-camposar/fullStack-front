@@ -10,7 +10,7 @@ export default function App() {
     // 🔐 Iniciar sesión y obtener el token JWT desde el backend
     // ----------------------------------------------------------
     const handleLogin = async () => {
-        const res = await fetch("https://yn8csy-3001.csb.app/login", {
+        const res = await fetch("https://yn8csy-3000.csb.app/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username: "admin", password: "123456" }),
@@ -35,7 +35,7 @@ export default function App() {
     // ----------------------------------------------------------
     const obtenerUsuarios = async (token) => {
         try {
-            const res = await fetch("https://yn8csy-3001.csb.app/users", {
+            const res = await fetch("https://yn8csy-3000.csb.app/users", {
                 headers: {
                     "Authorization": `Bearer ${token}`, // Enviar token JWT al backend
                 },
